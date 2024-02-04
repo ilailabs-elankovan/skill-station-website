@@ -45,7 +45,7 @@ Complete the Json file given below.
   "logo": "https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg",
   "whatsapp_icon":"https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/whatsapp_icon.svg",
   "internship_icon":"https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/internship_icon.svg",
-  "career_guidance":"",
+  "career_guidance":"https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/career_guidance_icon.svg",
   "workshops_icon":"",
   "courses_icon":"",
   "fb_icon":"",
