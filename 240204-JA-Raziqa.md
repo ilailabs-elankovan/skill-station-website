@@ -176,4 +176,7 @@ var footerUrls = {
 };
 ```
 
+**Todo for Elango**
+• Create a folder and generate the broucher url with public access
+• Create a course enrollement form; and update the MD file. 
 
