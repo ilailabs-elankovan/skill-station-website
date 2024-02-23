@@ -6,10 +6,8 @@
     <title>Skillstation</title>
     <script src="https://kit.fontawesome.com/98a3ac1c4e.js" crossorigin="anonymous"></script>
     <style>
-     
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-       
+        
         body, html, div, h1, h2, h3, p, li, a, img {
             margin: 0;
             padding: 0;
@@ -21,15 +19,17 @@
             color: inherit;
         }
 
-      
+        
         .navbar {
-            background-color: #1a1a1a;
+            background-color: #2a21d0; /* Changed to white for a clean look */
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 50px;
-            position: sticky;
+            position: fixed; /* Changed to fixed for a sticky navbar */
             top: 0;
+            width: 100%; /* Ensures navbar spans the full width */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
             z-index: 1000;
         }
 
@@ -40,12 +40,13 @@
         }
 
         .navbar ul li a {
-            color: white;
+            color: #bfc5cc; /* Updated color for better visibility */
             padding: 8px 16px;
+            transition: color 0.3s ease-in-out;
         }
 
         .navbar ul li a:hover {
-            color: #007bff;
+            color: #d7dbe0; /* Darker blue on hover for interaction feedback */
             transition: color 0.3s ease-in-out;
         }
 
@@ -65,8 +66,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
 
-       
-        .what_we_do, .who_we_are, .courses_we_offer {
+         .what_we_do, .who_we_are, .courses_we_offer {
             font-size: 2.5rem;
             margin: 50px 0;
             color: #007bff;
@@ -94,7 +94,7 @@
 
        
         @media (max-width: 768px) {
-            .navbar ul {
+             .navbar ul {
                 flex-direction: column;
             }
 
@@ -131,49 +131,29 @@
             transform: scale(1.1);
         }
     </style>
+        
+    </style>
 </head>
 <body>
     <header class="navbar">
         <div class="logo">
-          <a href="./index.html"><img class="skillstation-logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg"/></a>
-          <a href="#" class="skillstation_wordings">Skill Station <br />Academy</a>
+            <a href="./index.html"><img class="skillstation-logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg"/></a>
+            <a href="#" class="skillstation_wordings">Skill Station <br />Academy</a>
         </div>
   
         <nav>
-          <ul>
-            <li >
-              <a href="#" class="header_list_items"
-                >About <br />
-                Skill Station</a
-              >
-            </li>
-            <li >
-              <a href="#" class="header_list_items">Professional <br />courses</a>
-            </li>
-            <li >
-              <a href="#" class="header_list_items">Events and <br />Workshops</a>
-            </li>
-            <li >
-              <a href="#" class="header_list_items">Internship and <br />Placements</a>
-            </li>
-            <!-- <li><a href="#">Blog</a></li> -->
-            <div class="contact">
-              <li>
-                <a href="#" class="contact_header"
-                  >Contact Us
-                  <span
-                    ><img
-                      class="whatsapp-logo"
-                      src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/whatsapp.svg"
-                      alt="" /></span
-                ></a>
-              </li>
-            </div>
-          </ul>
+            <ul>
+                <li><a href="#" class="header_list_items">About <br />Skill Station</a></li>
+                <li><a href="#" class="header_list_items">Professional <br />courses</a></li>
+                <li><a href="#" class="header_list_items">Events and <br />Workshops</a></li>
+                <li><a href="#" class="header_list_items">Internship and <br />Placements</a></li>
+                <div class="contact">
+                    <li><a href="#" class="contact_header">Contact Us<span><img class="whatsapp-logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/whatsapp.svg" alt=""></span></a></li>
+                </div>
+            </ul>
         </nav>
-      </header>
-  
-      <section class="banner">
+    </header>
+    <section class="banner">
         <!-- <h1>Elevate Your Pet's Happiness With Our Exceptional Care.</h1> -->
         <div class="banner_opacity">
           <img class="banner_gif" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/heropagebackroungimg/2_csie_workshop_16.gif" alt="" />
@@ -194,7 +174,7 @@
             is a non profit educational and research academy founded with mission
             to impact the lives of young minds
           </p>
-        </div>
+           </div>
         <div>
           <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/workshops_icon.svg" alt="" />
           <h2>Workshops</h2>
@@ -216,7 +196,7 @@
             to impact the lives of young minds
           </p>
         </div>
-        <div>
+         <div>
           <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/internships_placements_icon.svg" alt="" />
           <h2>Internships & Placements</h2>
           <p>
@@ -238,7 +218,7 @@
             alt="Pets"
           />
         </div>
-        <div class="about-content">
+          <div class="about-content">
           <p>
             Skill Station is a non profit educational and research academy founded
             with mission to impact the lives of young minds in our Skill Station
@@ -259,8 +239,7 @@
             minds in our Skill Station is a non profit educational and research
             academy founded with mission to impact the lives of young minds
           </p>
-          <!-- <button>Contact us Now</button> -->
-        </div>
+             </div>
       </section>
   
       <!-- End of who we are -->
@@ -289,7 +268,7 @@
       
       <div class="feedback-section">
         <h2>Student Feedback</h2>
-        <div class="testimonials">
+         <div class="testimonials">
           <div class="testimonial">
             <p>
               "Skill Station Academy provided an exceptional UI design course 
@@ -312,7 +291,7 @@
           </div>
           <div class="testimonial">
             <p>
-              Skill Station Academy provided an exceptional UI design course 
+                  Skill Station Academy provided an exceptional UI design course 
               with a thoughtfully structured curriculum. The teachers' polite 
               and supportive approach made learning a breeze, fostering an 
               environment where grasping new concepts was not only easy 
@@ -342,7 +321,7 @@
             <div class="line"></div>
             <div class="author">
               <img
-                src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/feedback/jeevlin.png"
+              src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/feedback/jeevlin.png"
                 alt="Jeevlin"
                 width="40"
                 height="40"
@@ -352,9 +331,7 @@
           </div>
         </div>
       </div>
-  
-  
-      <!-- Our Hiiring Partner -->
+        <!-- Our Hiiring Partner -->
   
       <div class="Our_hiring_partner-section">
         <h2>Our Hiring Partners</h2>
@@ -380,9 +357,7 @@
             <a href="" class="footer_ph"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/7e427f265769a623945fbce57219ab62531243e1/assets/images/icons/phone.svg" alt=""></a>       
           </div>
         </div>
-  
-  
-        <div class="footer_reference1">
+         <div class="footer_reference1">
           <p>About Skill Station</p>
           <p>Professional Courses</p>
           <p>Events </p>
@@ -410,8 +385,8 @@
           </div>
         </div>
         
-        
-        
+  
+     
       </div>
     </body>
   </html> 
