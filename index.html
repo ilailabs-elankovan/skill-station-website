@@ -1,392 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skillstation</title>
-    <script src="https://kit.fontawesome.com/98a3ac1c4e.js" crossorigin="anonymous"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-        
-        body, html, div, h1, h2, h3, p, li, a, img {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .sections {
+      background-color: #e4e1e1;
+    }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        
-        .navbar {
-            background-color: #2a21d0; /* Changed to white for a clean look */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            position: fixed; /* Changed to fixed for a sticky navbar */
-            top: 0;
-            width: 100%; /* Ensures navbar spans the full width */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
-            z-index: 1000;
-        }
+    .menu {
+      display: flex;
+      background-color: black;
+      padding: 0px;
+      text-align: right;
+      height: 64px;
+    }
 
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+    .logo-container {
+      /* background-color: #eccece; */
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    }
 
-        .navbar ul li a {
-            color: #bfc5cc; /* Updated color for better visibility */
-            padding: 8px 16px;
-            transition: color 0.3s ease-in-out;
-        }
+    .logo-image {
+      /* background-color: aqua; */
+      width: 64px;
+      height: 64px;
+      /* fill: white; */
+      filter: brightness(0) invert(1);
+    }
 
-        .navbar ul li a:hover {
-            color: #d7dbe0; /* Darker blue on hover for interaction feedback */
-            transition: color 0.3s ease-in-out;
-        }
+    .logo-text {
+      /* background-color: #d1b8b8; */
+      font-size: 28px;
+      padding-top: 0px;
+      width: 180px;
+      align-self: auto;
+      text-align: center;
+      color: white;
+    }
 
-        button, .form-section button, .benefit button, .card button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+    .button-container {
+      display: flex;
+      width: 60%;
+      height: 30px;
+      text-align: right;
+      margin-left: auto;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px;
+      padding-right: 0px;
+    }
 
-        button:hover, .form-section button:hover, .benefit button:hover, .card button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
 
-         .what_we_do, .who_we_are, .courses_we_offer {
-            font-size: 2.5rem;
-            margin: 50px 0;
-            color: #007bff;
-            text-align: center;
-        }
+    .menu-btn {
+      background-color: transparent;
+      border: none;
+      padding: 0px;
+      margin: 8px;
+      cursor: pointer;
+      outline: none;
+      width: 120px;
+      color: white;
+      font-size: 14px;
+      font-family: inherit;
+    }
 
-      
-        .stats, .about-section, .course_we_offer_section {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    .menu-btn:hover {
+      font-size: 15px;
+      text-decoration: underline;
+    }
 
-        .stats div, .about-content, .courses_we_offer_logo {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    @media screen and (max-width: 768px) {
+      .button-container {
+        display: none;
+      }
+    }
 
-        .about-image img, .courses_we_offer_logo {
-            max-width: 100%;
-            border-radius: 8px;
-        }
+    .section-one {
+      background-color: #f0f0f0;
+      padding: 20px;
+      height: 480px;
+      margin-bottom: 10px;
+    }
 
-       
-        @media (max-width: 768px) {
-             .navbar ul {
-                flex-direction: column;
-            }
+    .herobg-video {
+      width: 100%;
+    }
 
-            .stats, .about-section, .course_we_offer_section {
-                flex-direction: column;
-            }
-        }
+    .video-container {
+      position: relative;
+      height: 100px;
+    }
 
-       
-        .footer_section {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
+    .overlay {
+      position: absolute;
+      padding-top: 64px;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0.5;
+    }
 
-        .footer_section p, .footer_section a {
-            color: #fff;
-        }
+    .text-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 24px;
+      color: white;
+    }
 
-        .footer_rights_reserved {
-            width: 100%;
-            text-align: center;
-            margin-top: 20px;
-        }
+    .section-two {
+      background-color: #eccece;
+      padding: 20px;
+      /* height: 480px; */
+      margin-bottom: 10px;
+    }
 
-        .footer_logo_fb_yt_wa_ph img {
-            transition: transform 0.3s ease-in-out;
-        }
+    .section-three {
+      background-color: #d1b8b8;
+      padding: 20px;
+      /* height: 480px; */
+      margin-bottom: 10px;
+    }
 
-        .footer_logo_fb_yt_wa_ph img:hover {
-            transform: scale(1.1);
-        }
-    </style>
-        
-    </style>
+    .section-footer {
+
+      margin: 0px;
+      background-color: black;
+      padding: 0px;
+      /* height: 480px; */
+      margin-bottom: 0px;
+    }
+
+    .section-footer-texts {
+      display: flex;
+      /* height: 450px; */
+      color: azure;
+      background-color: azure;
+    }
+
+    .section-footer-texts-one {
+      width: 33.3%;
+      color: azure;
+      background-color: black;
+    }
+
+    .logo-container-footer {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Added for older browsers */
+}
+
+.logo-image-footer {
+  padding-top: 32px;
+  width: 200px; 
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+.logo-text-footer {
+  font-size: 24px;
+  text-align: center;
+}
+
+
+    .section-footer-texts-two {
+      padding: 32px;
+      width: 33.3%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-color:black;
+      font-size: 14px;
+    }
+
+/* Define hover effect for all p elements within .section-footer-texts-two and .section-footer-texts-three */
+.section-footer-texts-two p:hover,
+.section-footer-texts-three p:hover {
+  font-size: 14px;
+  cursor: pointer; /* Change cursor to pointer on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+
+
+    .section-footer-texts-three {
+      padding: 32px;
+      width: 33.3%;
+      text-align: center;
+      font-size: 14px;
+      background-color: black;
+    }
+
+    
+
+    .section-footer-copyrights {
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      margin: 0px auto;
+      padding: 6px;
+    }
+
+    .section-footer-copyrights p {
+  margin: 6px; /* Remove default margin of <p> element */
+}
+
+    .section {
+      /* height: 480px; */
+    }
+  </style>
+  <title>Skill Station</title>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <a href="./index.html"><img class="skillstation-logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg"/></a>
-            <a href="#" class="skillstation_wordings">Skill Station <br />Academy</a>
-        </div>
-  
-        <nav>
-            <ul>
-                <li><a href="#" class="header_list_items">About <br />Skill Station</a></li>
-                <li><a href="#" class="header_list_items">Professional <br />courses</a></li>
-                <li><a href="#" class="header_list_items">Events and <br />Workshops</a></li>
-                <li><a href="#" class="header_list_items">Internship and <br />Placements</a></li>
-                <div class="contact">
-                    <li><a href="#" class="contact_header">Contact Us<span><img class="whatsapp-logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/whatsapp.svg" alt=""></span></a></li>
-                </div>
-            </ul>
-        </nav>
-    </header>
-    <section class="banner">
-        <!-- <h1>Elevate Your Pet's Happiness With Our Exceptional Care.</h1> -->
-        <div class="banner_opacity">
-          <img class="banner_gif" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/heropagebackroungimg/2_csie_workshop_16.gif" alt="" />
-        </div>
-        
-        <!-- <button>REGISTER NOW</button> -->
-      </section>
-  
-      <!-- what we do section -->
-      <h1 class="what_we_do">What we do?</h1>
-      <section class="stats">
-        <div>
-          <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/career_guidance_icon.svg" alt="" />
-          <h2>Career Guidance</h2>
-          <p>
-            Skill Station is a non profit educational and research academy founded
-            with mission to impact the lives of young minds in our Skill Station
-            is a non profit educational and research academy founded with mission
-            to impact the lives of young minds
-          </p>
-           </div>
-        <div>
-          <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/workshops_icon.svg" alt="" />
-          <h2>Workshops</h2>
-          <p>
-            Skill Station is a non profit educational and research academy founded
-            with mission to impact the lives of young minds in our Skill Station
-            is a non profit educational and research academy founded with mission
-            to impact the lives of young minds
-          </p>
-        </div>
-        <div>
-          <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/professional_courses_icon.svg" alt="" />
-          <h2>Professional Courses</h2>
-  
-          <p>
-            Skill Station is a non profit educational and research academy founded
-            with mission to impact the lives of young minds in our Skill Station
-            is a non profit educational and research academy founded with mission
-            to impact the lives of young minds
-          </p>
-        </div>
-         <div>
-          <img class="what_we_do_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/icons/internships_placements_icon.svg" alt="" />
-          <h2>Internships & Placements</h2>
-          <p>
-            Skill Station is a non profit educational and research academy founded
-            with mission to impact the lives of young minds in our Skill Station
-            is a non profit educational and research academy founded with mission
-            to impact the lives of young minds
-          </p>
-        </div>
-      </section>
-      <!-- End of front page with header -->
-  
-      <!-- who we are -->
-      <h2 class="who_we_are">Who we are</h2>
-      <section class="about-section">
-        <div class="about-image">
-          <img
-            src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/whoweare/img1.png"
-            alt="Pets"
-          />
-        </div>
-          <div class="about-content">
-          <p>
-            Skill Station is a non profit educational and research academy founded
-            with mission to impact the lives of young minds in our Skill Station
-            is a non profit educational and research academy founded with mission
-            to impact the lives of young minds Skill Station is a non profit
-            educational and research academy founded with mission to impact the
-            lives of young minds in our Skill Station is a non profit educational
-            and research academy founded with mission to impact the lives of young
-            minds Skill Station is a non profit educational and research academy
-            founded with mission to impact the lives of young minds in our Skill
-            Station is a non profit educational and research academy founded with
-            mission to impact the lives of young minds Skill Station is a non
-            profit educational and research academy founded with mission to impact
-            the lives of young minds in our Skill Station is a non profit
-            educational and research academy founded with mission to impact the
-            lives of young minds Skill Station is a non profit educational and
-            research academy founded with mission to impact the lives of young
-            minds in our Skill Station is a non profit educational and research
-            academy founded with mission to impact the lives of young minds
-          </p>
-             </div>
-      </section>
-  
-      <!-- End of who we are -->
-  
-      
-  
-      <!-- Courses we offer -->
-      <h1 class="courses_we_offer">Courses we offer</h1>
-      <section class="course_we_offer_section">
-        <div>
-          <img class="courses_we_offer_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/courseweoffer/card1.png" alt="" />
-          
-        </div>
-        <div>
-          <img class="courses_we_offer_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/courseweoffer/card2.png" alt="" />
-          
-        </div>
-        <div>
-          <img class="courses_we_offer_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/courseweoffer/card3.png" alt="" />
-          
-        </div>
-        
-        </div> 
-      </section>
-  
-      
-      <div class="feedback-section">
-        <h2>Student Feedback</h2>
-         <div class="testimonials">
-          <div class="testimonial">
-            <p>
-              "Skill Station Academy provided an exceptional UI design course 
-              with a thoughtfully structured curriculum. The teachers' polite 
-              and supportive approach made learning a breeze, fostering an 
-              environment where grasping new concepts was not only easy 
-              but enjoyable. Highly recommend for anyone looking to dive 
-              into the world of UI design!"
-            </p>
-            <div class="line"></div>
-            <div class="author">
-              <img
-                src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/feedback/varun.jpg"
-                alt="Author"
-                width="40"
-                height="40"
-              />
-              <div class="name">Varun <br>UI/UX Designer</div>
-            </div>
-          </div>
-          <div class="testimonial">
-            <p>
-                  Skill Station Academy provided an exceptional UI design course 
-              with a thoughtfully structured curriculum. The teachers' polite 
-              and supportive approach made learning a breeze, fostering an 
-              environment where grasping new concepts was not only easy 
-              but enjoyable. Highly recommend for anyone looking to dive 
-              into the world of UI design!"
-            </p>
-            <div class="line"></div>
-            <div class="author">
-              <img
-                src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/feedback/mahin.jpg"
-                alt="Maheen"
-                width="40"
-                height="40"
-              />
-              <div class="name">Maheen <br>Graphic Designer</div>
-            </div>
-          </div>
-          <div class="testimonial">
-            <p>
-              "Skill Station Academy provided an exceptional UI design course 
-              with a thoughtfully structured curriculum. The teachers' polite 
-              and supportive approach made learning a breeze, fostering an 
-              environment where grasping new concepts was not only easy 
-              but enjoyable. Highly recommend for anyone looking to dive 
-              into the world of UI design!"
-            </p>
-            <div class="line"></div>
-            <div class="author">
-              <img
-              src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/feedback/jeevlin.png"
-                alt="Jeevlin"
-                width="40"
-                height="40"
-              />
-              <div class="name">Jeevlin <br>Full Stack Development</div>
-            </div>
-          </div>
-        </div>
+  <div class="menu">
+    <div class="logo-container">
+      <img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg"
+        alt="Logo" class="logo-image">
+      <div class="logo-text">Skill Station</div>
+    </div>
+    <div class="button-container">
+      <button class="menu-btn" id="section-one-btn" onclick="scrollToSection('section-1')">About us</button>
+      <button class="menu-btn" id="section-two-btn" onclick="scrollToSection('section-2')">Courses</button>
+      <button class="menu-btn" id="section-three-btn" onclick="scrollToSection('section-3')">Workshops</button>
+      <button class="menu-btn" id="section-four-btn" onclick="scrollToSection('section-4')">Placements</button>
+      <button class="menu-btn" id="section-four-btn" onclick="scrollToSection('section-4')">Contact us</button>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="section" id="section-1">
+      <video class="herobg-video" autoplay loop muted>
+        <source src="assets/videos/herobg_video.webm" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay"></div>
+      <div class="text-overlay">
+        <h2>Empowering Minds & Transforming Lives</h2>
+        <p>Together We Educate, Volunteer With us</p>
       </div>
-        <!-- Our Hiiring Partner -->
-  
-      <div class="Our_hiring_partner-section">
-        <h2>Our Hiring Partners</h2>
-        <div class="Our_hiring_partner_logo"><img class="ilailabs_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/ourhiringpartners/ilailabs.png" alt=""></div>
-        <div class="Our_hiring_partner_logo"><img class="easyprop_logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/ourhiringpartners/easyprop.png" alt=""></div>
-        <div class="Our_hiring_partner_logo"><img class="saras.logo" src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/ourhiringpartners/saras.png" alt=""></div>
-      </div>
-      <!-- End of Why choose us -->
-  
-  
-      <!-- Footer section -->
-      <div class="footer_section">
-        <div class="footer_logo">
-          <div class="footer_logo_images">
-          <a href="" class="footer_logo_skillstation"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg" alt=""></a>
-          <a href="" class="footer_skill_station">Skill Station <br>Academy</a>
-          </div>
-  
-          <div class="footer_logo_fb_yt_wa_ph">
-            <a href="" class="footer_fb"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/7e427f265769a623945fbce57219ab62531243e1/assets/images/icons/facebook.svg" alt=""></a>
-            <a href="" class="footer_yt"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/7e427f265769a623945fbce57219ab62531243e1/assets/images/icons/youtube.svg" alt=""></a>
-            <a href="" class="footer_wa"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/7e427f265769a623945fbce57219ab62531243e1/assets/images/icons/whatsapp.svg" alt=""></a>
-            <a href="" class="footer_ph"><img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/7e427f265769a623945fbce57219ab62531243e1/assets/images/icons/phone.svg" alt=""></a>       
+    </div>
+
+
+    <div class="section" id="section-2">
+      <p1></p1>
+    </div>
+
+    <div class="section" id="section-3">
+    
+    </div>
+
+    <div class="section-footer" id="section-4">
+      <div class="section-footer-texts">
+        <div class="section-footer-texts-one">
+          <div class="logo-container-footer">
+            <img src="https://raw.githubusercontent.com/ilailabs-elankovan/skill-station-website/main/assets/images/logo.svg"
+              alt="Logo" class="logo-image-footer">
+            <div class="logo-text-footer">Skill Station<br>Academy</div>
           </div>
         </div>
-         <div class="footer_reference1">
+        <div class="section-footer-texts-two">
           <p>About Skill Station</p>
           <p>Professional Courses</p>
-          <p>Events </p>
-          <p>workshops</p>
-          <p>Internship</p>
-          <p>Placements</p>
+          <p>Events and Workshops</p>
+          <p>Internship and Placements</p>
         </div>
-  
-        <div class="footer_rights_reserved">
-          <i class="fa-regular fa-copyright"></i><span> 2022 Skill Station. All Rights Reserved</span>
-        </div>
-        
-        
-        <div class="footer_reference2">
+        <div class="section-footer-texts-three">
           <p>Contact us</p>
-          <p>Feedback</p>
+          <p>+91 73059 59397</p>
+          <p>info@skillstation.org</p>
         </div>
-        
-        <div class="footer_app_reference">
-          <div class="footer_playstore_button">
-            <!-- <button><i class="fa-brands fa-google-play" style="color: #18e24a;"></i>GET IT ON <br>Google Play</button> -->
-          </div>
-          <div class="footer_istore_button">
-            <!-- <button><i class="fa-brands fa-apple"></i>Download on the <br>App Store</button> -->
-          </div>
-        </div>
-        
-  
-     
+
       </div>
-    </body>
-  </html> 
+      <div class="section-footer-copyrights">
+        <p>© Copyrights Skill Station 2023</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function myPrint() {
+      console.log("myPrint executed")
+    }
+
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error(`Section with id '${sectionId}' not found.`);
+      }
+    }
+
+    // Get the video container and overlay elements
+    const videoContainer = document.querySelector('.herobg-video');
+    const overlay = document.querySelector('.overlay');
+
+    // Measure the height of the video container
+    const videoContainerHeight = videoContainer.clientHeight;
+
+    // Set the height of the overlay to match the video container height
+    overlay.style.height = `${videoContainerHeight}px`;
+
+  </script>
+</body>
+
+</html>
